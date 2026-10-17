@@ -34,7 +34,7 @@ export default function App() {
   }, [view]);
 
   const go = useCallback((next) => {
-    window.location.hash = next === 'home' ? '' : `/${next}`;
+    window.location.hash = next === 'home' ? '' : next;
     setView(next);
   }, []);
 

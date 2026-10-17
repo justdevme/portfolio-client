@@ -1,3 +1,4 @@
+import { asset } from '../assets.js';
 import Html from '../components/Html.jsx';
 import { StarBullet } from '../components/Icons.jsx';
 import moonsceneHtml from '../markup/moonscene.html?raw';
@@ -25,13 +26,13 @@ const APPROACH = [
 export default function About({ go }) {
   return (
     <section className="stardust about">
-      <img className="sticker" src="/img/sticker.webp" alt="" aria-hidden="true" />
+      <img className="sticker" src={asset("img/sticker.webp")} alt="" aria-hidden="true" />
       <div className="wrap fade about-top">
         <div className="about-photo-col">
           <div className="about-photo-wrap">
             <div className="about-photo-ring" />
             <div className="sheen about-photo">
-              <img src="/img/portrait.jpg" alt="Chân dung Nhê" />
+              <img src={asset("img/portrait.jpg")} alt="Chân dung Nhê" />
             </div>
           </div>
         </div>

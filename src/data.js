@@ -1,3 +1,5 @@
+import { asset } from './assets.js';
+
 const BASE = 'Phân tích chi tiết và đưa ra định hướng';
 
 export const PACKAGES = [
@@ -43,7 +45,7 @@ const alts = [
 ];
 
 export const SHOTS = alts.map((alt, i) => ({
-  src: `/img/feedback-${String(i + 1).padStart(2, '0')}.jpg`,
+  src: asset(`img/feedback-${String(i + 1).padStart(2, '0')}.jpg`),
   alt,
 }));
 

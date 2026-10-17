@@ -1,10 +1,11 @@
+import { asset } from '../assets.js';
 import { SparkleIcon } from '../components/Icons.jsx';
 
 export default function Home({ go }) {
   return (
     <section className="hero">
       <img
-        className="heroimg" src="/img/hero.webp" alt="Nhê đang trải bài Tarot trên chiếc sofa cam"
+        className="heroimg" src={asset("img/hero.webp")} alt="Nhê đang trải bài Tarot trên chiếc sofa cam"
         fetchPriority="high" decoding="async"
       />
       <div className="hero-shade" />

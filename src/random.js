@@ -1,4 +1,6 @@
 // Seeded generators so the decorative sky is identical on every render.
+import { asset } from './assets.js';
+
 export function makeRng(seed) {
   let s = seed;
   return () => {
@@ -77,7 +79,7 @@ export function buildSubSky() {
   const stars = [];
   for (let c = 0; c < 35; c++) {
     stars.push({
-      src: c % 3 === 0 ? '/img/star-a.svg' : '/img/star-b.svg',
+      src: c % 3 === 0 ? asset('img/star-a.svg') : asset('img/star-b.svg'),
       x: (rnd() * 100).toFixed(2), y: (rnd() * 100).toFixed(2),
       z: Math.round(c % 3 === 0 ? 16 + rnd() * 18 : 10 + rnd() * 16),
       d: (2.5 + rnd() * 3.5).toFixed(1), w: (-rnd() * 4).toFixed(2),
