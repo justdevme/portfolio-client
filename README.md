@@ -20,3 +20,9 @@ npm run build    # output: dist/
 - `src/styles.css` — CSS gốc của thiết kế; `src/layout.css` — layout từng trang.
 - `src/markup/*.html` — SVG trang trí tĩnh sinh sẵn (trăng, chòm sao, mây) nhúng qua `?raw`.
 - `public/img/` — ảnh hero, chân dung, 20 ảnh feedback, SVG sao.
+
+## Deploy (GitHub Pages)
+
+Push lên `main` sẽ tự build và deploy qua `.github/workflows/deploy.yml`.
+Lần đầu: GitHub repo → Settings → Pages → Build and deployment → Source: **GitHub Actions**.
+Site chạy tại `https://<user>.github.io/portfolio-client/` (dùng `base: './'` và hash routing nên không cần cấu hình thêm).
