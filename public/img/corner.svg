@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200"><stop offset="0" stop-color="#8A6224"></stop><stop offset=".18" stop-color="#D9AD55"></stop><stop offset=".34" stop-color="#FFF1C9"></stop><stop offset=".46" stop-color="#E2B964"></stop><stop offset=".62" stop-color="#9C7330"></stop><stop offset=".8" stop-color="#F7DDA0"></stop><stop offset="1" stop-color="#B8893A"></stop></linearGradient></defs>
+<g stroke="url(#g)" fill="none" stroke-linecap="round">
+<path d="M6 6H190" stroke-width="2"></path><path d="M6 6V190" stroke-width="2"></path>
+<path d="M16 16H150" stroke-width=".9"></path><path d="M16 16V150" stroke-width=".9"></path>
+<path d="M16 16C56 16 74 40 62 62C54 76 34 72 36 58C38 48 52 50 50 58" stroke-width="1.6"></path>
+<path d="M16 16C16 56 40 74 62 62" stroke-width="1.6"></path>
+<path d="M62 62C80 50 104 52 120 36C106 60 84 72 62 62Z" fill="url(#g)" stroke-width=".8"></path>
+<path d="M62 62C50 80 52 104 36 120C60 106 72 84 62 62Z" fill="url(#g)" stroke-width=".8"></path>
+<path d="M120 36C132 28 148 30 156 22" stroke-width="1.1"></path><path d="M36 120C28 132 30 148 22 156" stroke-width="1.1"></path>
+<path d="M90 16C98 26 112 26 118 16" stroke-width="1"></path><path d="M16 90C26 98 26 112 16 118" stroke-width="1"></path>
+<circle cx="170" cy="6" r="3" fill="url(#g)"></circle><circle cx="6" cy="170" r="3" fill="url(#g)"></circle>
+<circle cx="136" cy="16" r="2" fill="url(#g)"></circle><circle cx="16" cy="136" r="2" fill="url(#g)"></circle>
+</g>
+<polygon points="30.00,18.00 31.84,28.16 42.00,30.00 31.84,31.84 30.00,42.00 28.16,31.84 18.00,30.00 28.16,28.16" fill="url(#g)"></polygon>
+<polygon points="88.36,75.64 84.00,82.00 88.36,88.36 82.00,84.00 75.64,88.36 80.00,82.00 75.64,75.64 82.00,80.00" fill="#FFF1C9"></polygon>
+</svg>

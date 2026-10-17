@@ -1,0 +1,144 @@
+/* Page-level layout (the inline styles of the design, moved into classes). */
+.contents { display: contents; }
+
+.app { position: relative; min-height: 100vh; font-family: 'Lora', serif; color: #F7EDE2; }
+
+/* Header */
+.site-header {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 30;
+  border-bottom: 1px solid rgba(232, 199, 122, .8);
+  background: linear-gradient(180deg, rgba(46, 5, 13, .75), rgba(46, 5, 13, 0));
+}
+.site-nav {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 12px 24px; padding-top: 16px; padding-bottom: 16px;
+}
+.site-nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px; }
+.logo-btn { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: baseline; gap: 10px; color: #F7EDE2; }
+.logo { display: block; overflow: visible; margin: -6px 0 -8px -6px; }
+.btn-book { min-height: 44px; padding: 0 22px; }
+
+/* Footer */
+.site-footer { position: relative; z-index: 2; background: #2E050D; border-top: 1px solid rgba(232, 199, 122, .3); }
+.site-footer-inner {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+  padding-top: 26px; padding-bottom: 26px; font-size: 14.5px; color: #E3CFC6;
+}
+.footer-brand { letter-spacing: .14em; font-weight: 700; color: #F7EDE2; }
+.footer-script { font-size: 20px; color: #E8C77A; }
+
+/* Shared */
+.section { min-height: 900px; padding: 140px 0 72px; }
+.section-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 56px; position: relative; z-index: 2; }
+.sec-title { margin: 0; font-size: 60px; line-height: 1.05; font-weight: 600; }
+.body-text { margin: 0; font-size: 18px; line-height: 1.8; color: #F2E2D8; font-weight: 400; }
+.muted { color: #E3CFC6; }
+
+/* Home */
+.hero { position: relative; height: 100vh; min-height: 760px; overflow: hidden; }
+.hero .heroimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(58, 8, 17, .35) 0%, rgba(58, 8, 17, .05) 30%, rgba(58, 8, 17, .55) 58%, rgba(46, 5, 13, .96) 86%); }
+.hero-tint { position: absolute; inset: 0; background: rgba(110, 14, 32, .18); mix-blend-mode: multiply; }
+.hero-copy {
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 56px;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 0 20px;
+}
+.hero-title { margin: 0; font-size: 76px; line-height: 1.05; font-weight: 600; letter-spacing: .04em; }
+.hero-sub { margin: 4px 0 10px; font-size: 16px; font-weight: 400; letter-spacing: .08em; color: #F2E2D8; }
+.row-center { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+/* About */
+.about { min-height: 900px; padding: 140px 0 80px; position: relative; overflow: hidden; }
+.about .sticker { top: 70px; right: -150px; width: 440px; opacity: 1; filter: brightness(1.35) saturate(1.25) contrast(1.08) drop-shadow(0 0 6px rgba(255, 214, 120, .55)) drop-shadow(0 0 22px rgba(255, 190, 80, .4)); }
+.about-top { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 64px; align-items: center; }
+.about-photo-col { flex: 1 1 380px; display: flex; justify-content: center; }
+.about-photo-wrap { position: relative; width: 100%; max-width: 440px; }
+.about-photo-ring { position: absolute; inset: -14px; border: 1px solid rgba(232, 199, 122, .55); border-radius: 260px 260px 28px 28px; }
+.about-photo { border-radius: 240px 240px 20px 20px; aspect-ratio: 3 / 4; border: 1px solid #E8C77A; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; }
+.about-copy { flex: 1 1 460px; display: flex; flex-direction: column; gap: 22px; }
+.about-lead { margin: -4px 0 0; font-family: 'Source Serif 4', serif; font-size: 22px; font-style: italic; font-weight: 400; line-height: 1.65; letter-spacing: .015em; color: #F8EBD2; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.stat { padding: 18px; text-align: center; }
+.stat-num { font-size: 40px; font-weight: 700; }
+.stat-label { font-size: 14.5px; color: #E3CFC6; }
+.about-list { margin-top: 6px; font-size: 18px; gap: 14px; }
+.how { position: relative; z-index: 2; margin-top: 80px; display: flex; flex-direction: column; gap: 28px; }
+.how .divider { font-family: 'Source Serif 4', serif; font-size: 22px; font-style: italic; font-weight: 400; letter-spacing: .02em; color: #F3D99A; }
+.how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.how-card { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+.how-card .medal { width: 44px; height: 44px; font-size: 18px; }
+.how-card h3 { margin: 0; font-size: 26px; font-weight: 600; color: #F6E7C8; }
+.how-card p { margin: 0; font-size: 17px; line-height: 1.75; color: #F2E2D8; font-weight: 400; }
+.how-note { text-align: center; max-width: 760px; align-self: center; }
+.how-thanks { margin: 0; text-align: center; font-family: 'Source Serif 4', serif; font-size: 34px; font-style: italic; font-weight: 600; line-height: 1.45; letter-spacing: .02em; color: #F6DFA4; }
+
+/* Pricing */
+.pricing-wrap { display: flex; flex-direction: column; gap: 44px; }
+.pricing-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+.pricing-head p { margin: 0; font-weight: 400; }
+.pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.pkg { text-align: left; color: #F7EDE2; cursor: pointer; font-family: 'Lora', serif; }
+.pkg-top { display: flex; justify-content: space-between; align-items: center; }
+.pkg-tag { font-size: 10px; letter-spacing: .2em; }
+.pkg-name { font-size: 32px; font-weight: 600; letter-spacing: .04em; }
+.pkg-sub { color: #E8C77A; font-size: 15.5px; margin-top: 4px; }
+.pkg-price { font-size: 54px; font-weight: 700; line-height: 1; }
+.pkg .list { font-size: 15.5px; }
+.pkg-off { font-size: 15.5px; line-height: 1.5; margin-top: -4px; }
+.pkg-off strong { font-size: 20px; font-weight: 700; letter-spacing: .02em; }
+.pkg-cta { margin-top: auto; font-size: 14.5px; letter-spacing: .03em; color: #E8C77A; }
+.pricing-foot { margin: -12px 0 0; text-align: center; font-size: 15.5px; color: #E3CFC6; }
+
+/* Feedback */
+.fb { display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start; }
+.fb-left { flex: 1 1 460px; display: flex; flex-direction: column; gap: 22px; }
+.fb-title { margin: 0; font-size: 56px; line-height: 1.05; font-weight: 600; }
+.fb-featured { margin: 0; padding: 30px; display: flex; flex-direction: column; gap: 14px; }
+.fb-quote-mark { font-size: 64px; line-height: .5; color: #E8C77A; }
+.fb-featured blockquote { margin: 0; font-family: 'Source Serif 4', serif; font-size: 22px; line-height: 1.75; font-style: italic; font-weight: 400; letter-spacing: .015em; word-spacing: .03em; color: #FFF8EE; }
+.fb-featured figcaption { font-size: 13px; letter-spacing: .12em; color: #E8C77A; }
+.fb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.fb-card { margin: 0; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+.fb-card blockquote { margin: 0; font-size: 16.5px; line-height: 1.7; color: #F7EDE2; }
+.fb-card figcaption { font-size: 11px; letter-spacing: .14em; color: #E8C77A; }
+.fb-right { flex: 1 1 380px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.shotframe { width: 100%; max-width: 420px; height: 520px; border-radius: 28px; border: 1px solid #E8C77A; background: #F6EFE6; box-shadow: 0 30px 80px rgba(0, 0, 0, .45), 0 0 30px rgba(232, 199, 122, .18); }
+.shot-controls { display: flex; align-items: center; gap: 18px; }
+.pips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 230px; }
+.shot-count { font-size: 14.5px; color: #E3CFC6; }
+
+/* Book */
+.book-card { width: 100%; max-width: 760px; padding: 52px 44px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; box-shadow: 0 40px 100px rgba(0, 0, 0, .45), 0 0 60px rgba(232, 199, 122, .15); }
+.book-title { font-size: 58px; font-weight: 700; }
+.book-lead { margin: 0; font-weight: 400; max-width: 540px; line-height: 1.7; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.msg-box { width: 100%; border: 1px dashed rgba(232, 199, 122, .6); border-radius: 16px; padding: 18px 20px; text-align: left; background: rgba(46, 5, 13, .45); }
+.msg-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.msg-label { font-size: 12.5px; font-weight: 600; letter-spacing: .18em; color: #E8C77A; }
+.msg-body { font-size: 16px; line-height: 1.7; color: #FFF3E6; }
+.msg-body strong { color: #F6DE9E; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; width: 100%; }
+.step { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.step .medal { width: 44px; height: 44px; font-size: 18px; }
+.step span:last-child { font-size: 15.5px; color: #F2E2D8; }
+.notes { width: 100%; text-align: left; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(232, 199, 122, .35); padding-top: 22px; }
+.notice { border: 1px solid rgba(232, 199, 122, .5); border-radius: 14px; padding: 14px 18px; background: rgba(232, 199, 122, .08); font-size: 15.5px; line-height: 1.7; color: #FFF3E6; }
+.notice strong { color: #F6DE9E; }
+.notes .list { font-size: 15.5px; }
+.book-cta { min-height: 60px; padding: 0 40px; font-size: 16px; }
+.zalo { margin: 0; text-align: center; font-size: 15.5px; line-height: 1.6; color: #F7EDE2; }
+.zalo a { color: #F6DE9E; font-weight: 700; letter-spacing: .04em; white-space: nowrap; text-decoration: none; border-bottom: 1px solid rgba(246, 222, 158, .5); }
+
+@media (max-width: 760px) {
+  .hero-copy { bottom: 40px; }
+  .about { padding-top: 140px; }
+  .about-top { gap: 40px; }
+  .stats { gap: 8px; }
+  .stat-num { font-size: 30px; }
+  .how-thanks { font-size: 26px; }
+  .fb-title { font-size: 38px; }
+  .book-card { padding: 36px 22px; }
+  .book-title { font-size: 42px; }
+  .shotframe { height: 460px; }
+}
