@@ -43,7 +43,7 @@ export default function About({ go }) {
           <div className="about-photo-wrap">
             <div className="about-photo-ring" />
             <div className="sheen about-photo">
-              <img src={asset("img/portrait.jpg")} alt="Chân dung Nhê" />
+              <img src={asset("img/portrait.webp")} alt="Chân dung Nhê" />
             </div>
           </div>
         </div>

@@ -45,7 +45,7 @@ const alts = [
 ];
 
 export const SHOTS = alts.map((alt, i) => ({
-  src: asset(`img/feedback-${String(i + 1).padStart(2, '0')}.jpg`),
+  src: asset(`img/feedback-${String(i + 1).padStart(2, '0')}.webp`),
   alt,
 }));
 

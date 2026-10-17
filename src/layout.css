@@ -149,3 +149,17 @@ html.is-hidden *, html.is-hidden *::before, html.is-hidden *::after { animation-
 .glitter, .subbg, .edgecel { contain: layout paint style; }
 .galaxy, .nebula, .beam, .substars { will-change: transform; }
 .moonscene { contain: layout paint; }
+
+.glitter { animation: skyin .9s ease both; }
+@keyframes skyin { from { opacity: 0; } to { opacity: 1; } }
+
+/* Phones: keep the look, drop the effects that force a repaint every frame. */
+@media (max-width: 760px) {
+  .galaxy, .arms, .beam, .sheen::after, .sticker { animation: none !important; }
+  .nebula { animation: none; filter: blur(36px); }
+  .rcloud { animation: none; mix-blend-mode: normal; filter: blur(22px); }
+  .subglow { animation: none; filter: blur(40px); }
+  .edgeart { animation: none; }
+  .spk, .tstar, .estar, .emoon { filter: none; }
+  .shimmer { animation: none; background-position: 38% 50%; }
+}

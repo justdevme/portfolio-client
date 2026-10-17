@@ -9,7 +9,10 @@ export function makeRng(seed) {
   };
 }
 
-export function buildGlitter(sparkleCount = 130) {
+export function buildGlitter(sparkleCount = 130, lite = false) {
+  const dotCount = lite ? 90 : sparkleCount * 3;
+  const fineCount = lite ? 80 : 380;
+  const floaterCount = lite ? 18 : 70;
   const rnd = makeRng(20261016);
   const gauss = () => (rnd() + rnd() + rnd() - 1.5) / 1.5;
   // 60% of points hug the bottom-left → top-right diagonal, the rest are scattered.
@@ -34,7 +37,7 @@ export function buildGlitter(sparkleCount = 130) {
   }
 
   const dots = [];
-  for (let j = 0; j < sparkleCount * 3; j++) {
+  for (let j = 0; j < dotCount; j++) {
     const q = place();
     const r = rnd();
     dots.push({
@@ -46,7 +49,7 @@ export function buildGlitter(sparkleCount = 130) {
 
   const fine = [];
   const fine2 = [];
-  for (let m = 0; m < 380; m++) {
+  for (let m = 0; m < fineCount; m++) {
     const q = place();
     const c = rnd();
     const dot = {
@@ -58,7 +61,7 @@ export function buildGlitter(sparkleCount = 130) {
   }
 
   const floaters = [];
-  for (let f = 0; f < 70; f++) {
+  for (let f = 0; f < floaterCount; f++) {
     floaters.push({
       x: (rnd() * 100).toFixed(1), z: (2 + rnd() * 4).toFixed(1), s: Math.round((rnd() - 0.5) * 90),
       t: (11 + rnd() * 16).toFixed(1), d: (-rnd() * 26).toFixed(1),
@@ -67,17 +70,17 @@ export function buildGlitter(sparkleCount = 130) {
   return { sparkles, dots, fine, fine2, floaters };
 }
 
-export function buildSubSky() {
+export function buildSubSky(lite = false) {
   const rnd = makeRng(777);
   const dust = [];
-  for (let a = 0; a < 170; a++) {
+  for (let a = 0; a < (lite ? 40 : 170); a++) {
     dust.push({
       x: (rnd() * 100).toFixed(2), y: (rnd() * 100).toFixed(2), z: (1.5 + rnd() * 3.5).toFixed(1),
       d: (3 + rnd() * 4).toFixed(1), w: (-rnd() * 5).toFixed(2),
     });
   }
   const stars = [];
-  for (let c = 0; c < 35; c++) {
+  for (let c = 0; c < (lite ? 14 : 35); c++) {
     stars.push({
       src: c % 3 === 0 ? asset('img/star-a.svg') : asset('img/star-b.svg'),
       x: (rnd() * 100).toFixed(2), y: (rnd() * 100).toFixed(2),

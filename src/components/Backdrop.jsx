@@ -1,18 +1,19 @@
 import { memo, useMemo } from 'react';
 import Html from './Html.jsx';
 import { buildGlitter, buildSubSky } from '../random.js';
+import { LITE } from '../perf.js';
 import cloudsHtml from '../markup/subbg-clouds.html?raw';
 import frameHtml from '../markup/subframe.html?raw';
 import edgecelHtml from '../markup/edgecel.html?raw';
 import edgecelNoRightHtml from '../markup/edgecel-no-right.html?raw';
 
-const SPARKLE_COUNT = 130;
+const SPARKLE_COUNT = LITE ? 36 : 130;
 
 const px = (v) => `${v}px`;
 
 /** Celestial background used on every sub page (not the home hero). */
 export const SubBackground = memo(function SubBackground() {
-  const { dust, stars } = useMemo(buildSubSky, []);
+  const { dust, stars } = useMemo(() => buildSubSky(LITE), []);
   return (
     <div className="subbg" aria-hidden="true">
       <div className="subbg-base" />
@@ -42,7 +43,7 @@ export const SubBackground = memo(function SubBackground() {
 
 /** Fixed full-screen glitter: nebulae, rotating galaxies of dots, sparkles, shooting stars. */
 export const Glitter = memo(function Glitter({ showFloaters }) {
-  const g = useMemo(() => buildGlitter(SPARKLE_COUNT), []);
+  const g = useMemo(() => buildGlitter(SPARKLE_COUNT, LITE), []);
   const dot = (cls) => (u, i) => (
     <span
       key={i} className={cls || u.c}
