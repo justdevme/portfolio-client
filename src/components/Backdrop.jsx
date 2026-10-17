@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import Html from './Html.jsx';
 import { buildGlitter, buildSubSky } from '../random.js';
 import cloudsHtml from '../markup/subbg-clouds.html?raw';
@@ -11,7 +11,7 @@ const SPARKLE_COUNT = 130;
 const px = (v) => `${v}px`;
 
 /** Celestial background used on every sub page (not the home hero). */
-export function SubBackground() {
+export const SubBackground = memo(function SubBackground() {
   const { dust, stars } = useMemo(buildSubSky, []);
   return (
     <div className="subbg" aria-hidden="true">
@@ -38,10 +38,10 @@ export function SubBackground() {
       <Html className="contents" html={frameHtml} />
     </div>
   );
-}
+});
 
 /** Fixed full-screen glitter: nebulae, rotating galaxies of dots, sparkles, shooting stars. */
-export function Glitter({ showFloaters }) {
+export const Glitter = memo(function Glitter({ showFloaters }) {
   const g = useMemo(() => buildGlitter(SPARKLE_COUNT), []);
   const dot = (cls) => (u, i) => (
     <span
@@ -86,17 +86,17 @@ export function Glitter({ showFloaters }) {
       <div className="beam" />
     </div>
   );
-}
+});
 
 /** Crescent moons + threads + stars pinned to both screen edges. The right moon is hidden on "Về Nhê". */
-export function EdgeCelestial({ hideRightMoon }) {
+export const EdgeCelestial = memo(function EdgeCelestial({ hideRightMoon }) {
   return (
     <Html
       className="edgecel"
       html={hideRightMoon ? edgecelNoRightHtml : edgecelHtml}
     />
   );
-}
+});
 
 const PETALS = [
   [54.4, 0, 13, 0], [57.9, 45.3, 9, 0.015], [46.4, 80.3, 17, 0.03], [-7.5, 53.9, 13, 0.045],

@@ -142,3 +142,10 @@
   .book-title { font-size: 42px; }
   .shotframe { height: 460px; }
 }
+
+/* Performance: keep decorative layers isolated and pause what nobody can see. */
+html.is-hidden *, html.is-hidden *::before, html.is-hidden *::after { animation-play-state: paused !important; }
+.moonscene.is-off *, .moonscene.is-off *::before, .moonscene.is-off *::after { animation-play-state: paused !important; }
+.glitter, .subbg, .edgecel { contain: layout paint style; }
+.galaxy, .nebula, .beam, .substars { will-change: transform; }
+.moonscene { contain: layout paint; }

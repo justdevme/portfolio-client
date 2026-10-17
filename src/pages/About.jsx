@@ -1,4 +1,5 @@
 import { asset } from '../assets.js';
+import { useEffect, useRef } from 'react';
 import Html from '../components/Html.jsx';
 import { StarBullet } from '../components/Icons.jsx';
 import moonsceneHtml from '../markup/moonscene.html?raw';
@@ -24,6 +25,16 @@ const APPROACH = [
 ];
 
 export default function About({ go }) {
+  const moonRef = useRef(null);
+  // The moon scene is far below the fold: only animate it while it is on screen.
+  useEffect(() => {
+    const el = moonRef.current;
+    if (!el || !('IntersectionObserver' in window)) return undefined;
+    const io = new IntersectionObserver(([e]) => el.classList.toggle('is-off', !e.isIntersecting), { rootMargin: '120px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section className="stardust about">
       <img className="sticker" src={asset("img/sticker.webp")} alt="" aria-hidden="true" />
@@ -79,7 +90,7 @@ export default function About({ go }) {
         <p className="how-thanks">Nhê ở đây cùng một sự biết ơn!</p>
       </div>
 
-      <div className="moonscene" role="img" aria-label="Trăng lưỡi liềm soi bóng nước giữa các chòm sao">
+      <div ref={moonRef} className="moonscene is-off" role="img" aria-label="Trăng lưỡi liềm soi bóng nước giữa các chòm sao">
         <Html className="contents" html={moonsceneHtml} />
         <p className="quote">Không chỉ là một lần trải bài,<br />mà là khoảnh khắc để bạn<br />kết nối lại với chính mình.</p>
       </div>

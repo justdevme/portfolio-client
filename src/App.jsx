@@ -27,6 +27,14 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
+  // Stop every CSS animation while the tab is in the background (saves battery, esp. on phones).
+  useEffect(() => {
+    const sync = () => document.documentElement.classList.toggle('is-hidden', document.hidden);
+    document.addEventListener('visibilitychange', sync);
+    sync();
+    return () => document.removeEventListener('visibilitychange', sync);
+  }, []);
+
   useEffect(() => {
     const titles = { home: 'Le Petit Miracle Tarot', about: 'Về Nhê', pricing: 'Bảng giá', feedback: 'Feedback', book: 'Book lịch' };
     document.title = view === 'home' ? titles.home : `${titles[view]} · Le Petit Miracle Tarot`;
