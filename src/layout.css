@@ -163,3 +163,6 @@ html.is-hidden *, html.is-hidden *::before, html.is-hidden *::after { animation-
   .spk, .tstar, .estar, .emoon { filter: none; }
   .shimmer { animation: none; background-position: 38% 50%; }
 }
+
+.pkg-mode { font-size: 15.5px; line-height: 1.5; color: #E8C77A; margin-top: -4px; }
+.pkg-note { font-size: 15.5px; line-height: 1.5; color: #F2E2D8; margin-top: -10px; }

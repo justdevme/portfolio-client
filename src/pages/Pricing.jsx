@@ -1,4 +1,4 @@
-import { PACKAGES } from '../data.js';
+import { PACKAGES, PACKAGE_MODE } from '../data.js';
 import { StarBullet } from '../components/Icons.jsx';
 
 export default function Pricing({ go, pkg, setPkg }) {
@@ -32,6 +32,8 @@ export default function Pricing({ go, pkg, setPkg }) {
                     <li key={f}><StarBullet /><span>{f}</span></li>
                   ))}
                 </ul>
+                <div className="pkg-mode">Hình thức: {PACKAGE_MODE}</div>
+                {k.note && <div className="pkg-note">Lưu ý: {k.note}</div>}
                 {k.off && (
                   <div className="pkg-off">
                     Xem trực tiếp tại Hải Phòng<br />
