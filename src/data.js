@@ -5,10 +5,10 @@ const BASE = 'Phân tích chi tiết và đưa ra định hướng';
 export const PACKAGES = [
   { id: 'dawn', num: 'I', name: 'The Dawn', sub: '1 câu hỏi', price: '59K', tag: 'Nhẹ nhàng', feats: [BASE] },
   { id: 'storm', num: 'II', name: 'The Storm', sub: '6 câu hỏi · 2 chủ đề', price: '239K', tag: '20 phút', feats: [BASE, 'Thời gian trải bài: 20 phút'] },
-  { id: 'calm', num: 'III', name: 'The Calm', sub: 'Không giới hạn câu hỏi', price: '399K', tag: '60 phút', feats: [BASE, 'Thời gian trải bài: 60 phút'], off: '479K · 60 phút', note: 'call + 70k' },
+  { id: 'calm', num: 'III', name: 'The Calm', sub: 'Không giới hạn câu hỏi', price: '399K', tag: '60 phút', feats: [BASE, 'Thời gian trải bài: 60 phút'], off: '499K · 60 phút', note: 'call + 70k' },
   {
     id: 'harvest', num: 'IV', name: 'The Harvest', sub: 'Không giới hạn câu hỏi', price: '569K', tag: 'Trải sâu',
-    feats: [BASE, 'Thời gian trải bài: 90 phút', 'Phù hợp với các vấn đề quan trọng cần trao đổi sâu'], off: '639K · 90 phút', note: 'call + 70k',
+    feats: [BASE, 'Thời gian trải bài: 90 phút', 'Phù hợp với các vấn đề quan trọng cần trao đổi sâu'], off: '699K · 90 phút', note: 'call + 70k',
   },
 ];
 
