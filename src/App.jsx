@@ -48,8 +48,8 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const titles = { home: 'Le Petit Miracle Tarot', about: 'Về Nhê', pricing: 'Bảng giá', feedback: 'Feedback', book: 'Book lịch' };
-    document.title = view === 'home' ? titles.home : `${titles[view]} · Le Petit Miracle Tarot`;
+    const titles = { home: 'Tarot with foolishnhe', about: 'Về Nhê', pricing: 'Bảng giá', feedback: 'Feedback', book: 'Book lịch' };
+    document.title = view === 'home' ? titles.home : `${titles[view]} · Tarot with foolishnhe`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [view]);
 
