@@ -8,7 +8,7 @@ export const PACKAGES = [
   { id: 'calm', num: 'III', name: 'The Calm', sub: 'Không giới hạn câu hỏi', price: '399K', tag: '60 phút', feats: [BASE, 'Thời gian trải bài: 60 phút'], off: '499K · 60 phút', note: 'call + 70k' },
   {
     id: 'harvest', num: 'IV', name: 'The Harvest', sub: 'Không giới hạn câu hỏi', price: '569K', tag: 'Trải sâu',
-    feats: [BASE, 'Thời gian trải bài: 90 phút', 'Phù hợp với các vấn đề quan trọng cần trao đổi sâu'], off: '699K · 90 phút', note: 'call + 70k',
+    feats: [BASE, 'Thời gian trải bài: 90 phút', 'Phù hợp với các vấn đề quan trọng cần trao đổi sâu'], off: '669K · 90 phút', note: 'call + 70k',
   },
 ];
 
