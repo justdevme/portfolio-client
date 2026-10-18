@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import { EdgeCelestial, Glitter, SubBackground, TapBurst } from './components/Backdrop.jsx';
@@ -93,6 +94,7 @@ export default function App() {
         {view === 'book' && <Book {...pageProps} />}
       </main>
       {notHome && <Footer />}
+      <Analytics />
     </div>
   );
 }
